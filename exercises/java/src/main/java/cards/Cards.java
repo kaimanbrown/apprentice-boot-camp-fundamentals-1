@@ -25,17 +25,13 @@ public class Cards {
         }
 
         int cardNumber = 0;
-        for (int[] card : deck) {
-            String faceValueName = nameFromValue(card[1]);
-
-            String suitName = getSuitFromNumber(card[0]);
-
-            result[cardNumber] = faceValueName + " of " + suitName;
+        for (PlayingCard card : playingCards) {
+            result[cardNumber] = card.toString();
             cardNumber++;
         }
 
         return result;
-//        return playingCards;
+
     }
 
     private static String getSuitFromNumber(int suitNumber) {

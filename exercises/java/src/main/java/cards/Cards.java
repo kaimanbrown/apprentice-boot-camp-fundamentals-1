@@ -6,14 +6,13 @@ import java.util.List;
 public class Cards {
     public static void main(String[] args) {
         Cards cards = new Cards();
-        String[] deckInOrder = cards.getCards();
-        for(String card: deckInOrder){
+        for(String card: cards.getCards()){
             System.out.println(card);
         }
     }
 
-    public String[] getCards() {
-        String[] result = new String[52];
+    public List<String> getCards() {
+        List<String> result = new ArrayList<>();
         List<PlayingCard> playingCards = new ArrayList<>();
 
         for (int suit = 0; suit < 4; suit++) {
@@ -22,10 +21,8 @@ public class Cards {
             }
         }
 
-        int cardNumber = 0;
         for (PlayingCard card : playingCards) {
-            result[cardNumber] = card.toString();
-            cardNumber++;
+            result.add(card.toString());
         }
 
         return result;

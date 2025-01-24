@@ -13,11 +13,12 @@ classDiagram
         -List<Card> cards
         -int NUM_OF_CARDS
         
-        +List<Card> getCards()
+        +Card nextCard()
     }
     class Cards {
         +main()
     }
     Cards --> Deck
     Cards --> Card
+    Deck --o Card
 ```

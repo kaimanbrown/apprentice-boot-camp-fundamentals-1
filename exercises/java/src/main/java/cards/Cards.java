@@ -29,16 +29,30 @@ public class Cards {
 
     }
 
-    private static String getSuitFromNumber(int suitNumber) {
-        String suitName;
+    private static Suit getSuitFromNumber(int suitNumber) {
+        Suit suit;
+
         switch (suitNumber){
-            case 0: suitName = "clubs"; break;
-            case 1: suitName = "diamonds"; break;
-            case 2: suitName = "hearts"; break;
-            case 3: suitName = "spades"; break;
+            case 0: {
+                suit = new Suit("clubs");
+                break;
+            }
+            case 1: {
+                suit = new Suit("diamonds");
+                break;
+            }
+            case 2: {
+                suit = new Suit("hearts");
+                break;
+            }
+            case 3: {
+                suit = new Suit("spades");
+                break;
+            }
             default: throw new IllegalArgumentException("Something went wrong " + suitNumber + "is not a valid suitName!");
         }
-        return suitName;
+        //return suitName;
+        return suit;
     }
 
     private static String nameFromValue(int value) {

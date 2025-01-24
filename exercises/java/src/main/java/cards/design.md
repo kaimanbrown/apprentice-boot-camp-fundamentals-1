@@ -3,7 +3,6 @@
 classDiagram
     class Suit{
         -string name
-        -int NUM_OF_CARDS
     }
     class Card{
         -string name
@@ -12,6 +11,8 @@ classDiagram
     }
     class Deck {
         -List<Card> cards
+        -int NUM_OF_CARDS
+        
         +List<Card> getCards()
     }
     class Cards {

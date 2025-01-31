@@ -8,18 +8,14 @@ public class Deck {
     private final List<PlayingCard> playingCards;
 
     public Deck(){
-        this.playingCards = getPlayingCards();
-    }
-
-    private static List<PlayingCard> getPlayingCards() {
-        List<PlayingCard> playingCards = new ArrayList<>();
+        List<PlayingCard> playingCards1 = new ArrayList<>();
 
         for (int suit = 0; suit < 4; suit++) {
             for (int faceValue = 0; faceValue < CARDS_IN_A_SUIT; faceValue++) {
-                playingCards.add(new PlayingCard(getSuitFromNumber(suit), nameFromValue(faceValue)));
+                playingCards1.add(new PlayingCard(getSuitFromNumber(suit), nameFromValue(faceValue)));
             }
         }
-        return playingCards;
+        this.playingCards = playingCards1;
     }
 
     private static Suit getSuitFromNumber(int suitNumber) {

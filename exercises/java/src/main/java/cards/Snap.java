@@ -20,9 +20,9 @@ class Snap {
     void play() {
         Scanner scanner = new Scanner(System.in);
 
-        AnimalCard previousCard = null;
+        SnappableCard previousCard = null;
         while (deck.getCards().length > 0) {
-            AnimalCard currentCard = deck.deal();
+            SnappableCard currentCard = deck.deal();
             System.out.println(currentCard);
             String input = scanner.nextLine();
             if (input.length() > 0 && input.charAt(0) == 'a') {

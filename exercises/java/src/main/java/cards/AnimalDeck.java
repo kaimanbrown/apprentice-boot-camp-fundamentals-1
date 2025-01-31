@@ -6,7 +6,7 @@ import java.util.List;
 
 class AnimalDeck {
 
-    private List<AnimalCard> cards;
+    private List<SnappableCard> cards;
 
     public AnimalDeck() {
         cards = new ArrayList<>();
@@ -23,13 +23,13 @@ class AnimalDeck {
     public String[] getCards() {
         String[] result = new String[cards.size()];
         for (int i = 0; i < cards.size(); i++) {
-            AnimalCard card = cards.get(i);
+            SnappableCard card = cards.get(i);
             result[i] = card.toString();
         }
         return result;
     }
 
-    public AnimalCard deal() {
+    public SnappableCard deal() {
         return cards.remove(0);
     }
 }

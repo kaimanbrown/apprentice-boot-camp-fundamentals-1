@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-class AnimalDeck {
+class AnimalDeck implements Deck {
 
     private List<SnappableCard> cards;
 
@@ -16,10 +16,12 @@ class AnimalDeck {
         }
     }
 
+    @Override
     public void shuffle() {
         Collections.shuffle(cards);
     }
 
+    @Override
     public String[] getCards() {
         String[] result = new String[cards.size()];
         for (int i = 0; i < cards.size(); i++) {
@@ -29,6 +31,7 @@ class AnimalDeck {
         return result;
     }
 
+    @Override
     public SnappableCard deal() {
         return cards.remove(0);
     }

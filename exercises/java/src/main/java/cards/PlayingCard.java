@@ -1,6 +1,6 @@
 package cards;
 
-public class PlayingCard {
+public class PlayingCard implements SnappableCard {
 
     private final Suit suit;
     private final String name;
@@ -8,6 +8,11 @@ public class PlayingCard {
     public PlayingCard(Suit suit, String name) {
         this.suit = suit;
         this.name = name;
+    }
+
+    @Override
+    public boolean snap(SnappableCard otherCard){
+        return otherCard != null && this.name.equals(((PlayingCard)otherCard).name);
     }
 
     @Override

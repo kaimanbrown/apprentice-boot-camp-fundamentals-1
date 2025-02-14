@@ -13,10 +13,10 @@ public class Cards {
 
     public List<String> getCards() {
         List<String> result = new ArrayList<>();
-        Deck deck = new Deck();
+        PlayingCardDeck deck = new PlayingCardDeck();
 
         while(deck.hasCards()){
-            result.add(deck.nextCard().toString());
+            result.add(deck.deal().toString());
         }
         return result;
     }

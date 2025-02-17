@@ -1,22 +1,18 @@
 package cards;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
-public class PlayingCardDeck implements Deck {
+public class PlayingCardDeck extends ParentDeck {
     public static final int CARDS_IN_A_SUIT = 13;
-    private final List<SnappableCard> playingCards;
 
     public PlayingCardDeck(){
-        List<SnappableCard> playingCards = new ArrayList<>();
+        super(new ArrayList<>());
 
         for (int suit = 0; suit < 4; suit++) {
             for (int faceValue = 0; faceValue < CARDS_IN_A_SUIT; faceValue++) {
-                playingCards.add(new PlayingCard(getSuitFromNumber(suit), nameFromValue(faceValue)));
+                cards.add(new PlayingCard(getSuitFromNumber(suit), nameFromValue(faceValue)));
             }
         }
-        this.playingCards = playingCards;
     }
 
     Suit getSuitFromNumber(int suitNumber) {
@@ -67,26 +63,7 @@ public class PlayingCardDeck implements Deck {
     }
 
     public boolean hasCards() {
-        return !playingCards.isEmpty();
+        return !cards.isEmpty();
     }
 
-    @Override
-    public void shuffle() {
-        Collections.shuffle(playingCards);
-    }
-
-    @Override
-    public String[] getCards() {
-        String[] result = new String[playingCards.size()];
-        for (int i = 0; i < playingCards.size(); i++) {
-            SnappableCard card = playingCards.get(i);
-            result[i] = card.toString();
-        }
-        return result;
-    }
-
-    @Override
-    public SnappableCard deal() {
-        return playingCards.remove(0);
-    }
 }
